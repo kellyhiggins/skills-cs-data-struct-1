@@ -1,0 +1,109 @@
+Runtime
+
+1. When calculating the Big O notation for a particular algorithm, it’s necessary to consider the length of time it takes for the algorithm to run as the algorithm’s workload approaches the size of infinity. What is the workload of a function that takes in a list of integers and returns a new list of the even integers?
+O(n)
+
+
+2. Order the following runtimes in ascending order by efficiency as n approaches infinity:
+O(1)
+O(log n)
+O(n)
+O(n log n)
+O(n2)
+O(2n)
+O(n!)
+
+Stacks and Queues
+
+1. In the following cases, would a stack or queue be an appropriate data structure?
+    A. The process of loading and unloading pallets onto a flatbed truck
+    STACK
+    B. Putting bottle caps on bottles of beer as they roll down an assembly line
+    QUEUE
+    C. Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2)
+    STACK
+
+2. Describe 2 more examples of when a queue would be an appropriate data structure.
+A printing queue
+a chronological comment thread
+
+3. Describe 2 more examples of when a stack would be an appropriate data structure.
+version logging (like git commits)
+website history (for control of looking back to last page)
+
+Linked Lists
+(Please be as specific as possible — exactly which parts of the diagram correspond to each part? Arrows? Boxes? Text?)
+
+1. Given the below linked list, which are the nodes? 
+The nodes are the items in the linked list - The rectangles containing the data ('Apple', 'Berry', 'Cherry'), and each of their corresponding 'next' data.
+
+What is the data for each node? 
+The data for each node is represented on the left hand side of each rectangle, the string in quotes - 'Apple', 'Berry', 'Cherry'
+Where is the head? 
+The head is the node containing 'Apple', the first rectangle on the second line
+Where is the tail? 
+There's no way to know if the tail is currently specified, but it would be 'Cherry', since the node containing 'Cherry' has None as its 'next' attribute.
+ 
+2. What’s the difference between a doubly and singly linked list?
+
+A singly linked list has its order specified in one direction only, each node refers to the one before or after it. A doubly linked list contains the data in each node for the item before AND after it.
+
+
+3. Why is it faster to append to a linked list if we keep track of the tail as an attribute?
+
+It is faster to append to a linked list if the tail attribute is defined, because we can rebind the tail attribute of the linked list; and by finding the current tail, simply rebind its next attribute to the node that we are appending. 
+
+
+Trees
+
+1. Given the above tree, in what order would a Breadth First Search (BFS) algorithm visit each node until finding burrito (starting at food)?
+[food] 
+Pop food, add its children
+[Italian, Indian, Mexican] 
+Pop Italian, add its children
+[Indian, Mexican, lasagna, pizza] 
+Pop Indian, add its children
+[Mexican, lasagna, pizza, tikka masala, saag] Pop Mexican, add its children
+[lasagna, pizza, tikka masala, saag, burrito, tacos, enchiladas] 
+Pop lasagna, no children to add
+[pizza, tikka masala, saag, burrito, tacos, enchiladas] 
+Pop pizza, add its children
+[tikka masala, saag, burrito, tacos, enchiladas, thin crust, Chicago-style, New York-style, Sicilian] 
+Pop tikka masala, no children
+[saag, burrito, tacos, enchiladas, thin crust, Chicago-style, New York-style, Sicilian]
+Pop saag, no children
+[burrito, tacos, enchiladas, thin crust, Chicago-style, New York-style, Sicilian]
+Pop burrito. FOUND BURRITO! 
+
+2. Given the above tree, in what order would a Depth First Search algorithm visit each node until finding Chicago-style (starting at food)?
+[food] 
+Pop food, add its children
+[Italian, Indian, Mexican] 
+Pop Mexican, add its children
+[Italian, Indian, burrito, tacos, enchiladas]
+Pop enchiladas, no children
+[Italian, Indian, burrito, tacos]
+Pop tacos, no children
+[Italian, Indian, burrito]
+Pop burrito, no children
+[Italian, Indian]
+Pop Indian, add its children
+[Italian, tikka masala, saag]
+Pop saag, no children
+[Italian, tikka masala]
+Pop tikka masala, no children
+[Italian]
+Pop Italian, add its children
+[lasagna, pizza]
+Pop pizza, add its children
+[lasagna, thin crust, Chicago-style, New York-style, Sicilian]
+Pop Sicilian, no children
+[lasagna, thin crust, Chicago-style, New York-style]
+Pop New York-style (obvs the best), no children
+[lasagna, thin crust, Chicago-style]
+Pop Chicago-style. FOUND CHICAGO STYLE!
+
+
+3. How is a binary search tree different from other trees?
+
+Each node in a binary search tree has a left and a right child, and has a rule for arrangement. The nodes are always in order, usually in increasing order.
